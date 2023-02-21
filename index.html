@@ -12,8 +12,9 @@
 </head>
 
 <body style='margin: 0; overflow: hidden;'>
+
     <div class="onoffswitch">
-        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0" >
+        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" value="geomatics" tabindex="0" onchange="getBuilding(this)" >
         <label class="onoffswitch-label" for="myonoffswitch">
             <span class="onoffswitch-inner"></span>
             <span class="onoffswitch-switch"></span>
@@ -36,11 +37,48 @@
         <a-box color="#4ecef9" depth="4" height="4" width="4"  gps-entity-place="longitude:120.22761791880879; latitude: 22.99856170145283;" 
         material="transparent: true; opacity: 0" animation-mixer></a-box> <!--ㄚ頭麵店longitude: 120.22761791880879; latitude: 22.99856170145283--> <!--總圖前草坪 120.21967,22.99910-->
 
-        <a-sphere color="#e23232" radius="1" gps-entity-place="longitude: 120.22789847379012; latitude: 22.998810029888585;" 
+        <a-sphere color="#e23232" radius="1" gps-entity-place="longitude: 120.219783; latitude: 22.99965;" 
         material="transparent: true;" animation-mixer></a-box> <!--ㄚ頭麵店後面longitude: 120.22789847379012; latitude: 22.998810029888585--> <!--總圖 120.219783,22.99965-->                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
     
 	</a-scene>
     <script>
-        
+        /*let building=[
+            {
+                name: 'Geomatics',
+                lat: 22.99910,
+                lon: 120.21967,
+            }
+        ];*/
+
+        function getBuilding(building){
+            if(building.checked===true){
+                console.log(building.value+" checked")
+
+                function renderBuilding(building){
+                    console.log("render building");
+                    let scene =document.querySelector('a-scene');
+                    const latitude = 22.99910;
+					const longitude = 120.21967;
+                    const box = document.createElement('a-box');
+                    box.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude}`);
+                    box.setAttribute('color', '#4ecef9');
+                    box.setAttribute('depth', '4');
+                    box.setAttribute('height', '4');
+                    box.setAttribute('width', '4');
+                    box.setAttribute('material', 'transparent: true; opacity: 0.1');
+                    box.addEventListener('loaded', () => {
+							window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'));
+							console.log("render box");
+						});
+                    scene.appendChild(box);
+                }
+
+                renderBuilding(building);
+            }
+
+            else{
+                console.log(building.value+" unchecked")
+            }
+        }
     </script>
 </body>
