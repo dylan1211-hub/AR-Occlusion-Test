@@ -57,10 +57,11 @@
                 function renderBuilding(building){
                     console.log("render building");
                     b=1;
-                    let scene =document.querySelector('a-scene');
+                    var scene =document.querySelector('a-scene');
                     const latitude = 22.99910;
 					const longitude = 120.21967;
                     const box = document.createElement('a-box');
+                    box.setAttribute('id', 'new-box');
                     box.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude}`);
                     box.setAttribute('color', '#4ecef9');
                     box.setAttribute('depth', '4');
@@ -81,8 +82,7 @@
                 console.log(building.value+" unchecked")
                 if(b=1){
                     let scene =document.querySelector('a-scene');
-                    let box =document.querySelector('a-box');
-                    scene.removeChild(box);
+                    scene.removeChild(document.getElementById('new-box'));
                     b=0;
                     console.log("remove box")
                 }
