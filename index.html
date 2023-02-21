@@ -23,6 +23,7 @@
     </div>
 
     <a-scene
+        id="scene"
         vr-mode-ui="enabled: false"
         render-order="layer1,layer2"
 		embedded
@@ -73,7 +74,7 @@
                 function renderBuilding(building){
                     console.log("render building");
                     b=1;
-                    var scene =document.querySelector('a-scene');
+                    var scene =document.getElementById('scene');
                     scene.setAttribute('logarithmicDepthBuffer','true');
 
                     const latitude = 22.99910;
@@ -100,7 +101,7 @@
             else{
                 console.log(building.value+" unchecked")
                 if(b=1){
-                    let scene =document.querySelector('a-scene');
+                    let scene =document.getElementById('scene');
                     scene.removeChild(document.getElementById('new-box'));
                     b=0;
                     console.log("remove box")
