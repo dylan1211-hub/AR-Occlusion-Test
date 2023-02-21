@@ -49,13 +49,14 @@
                 lon: 120.21967,
             }
         ];*/
-
+        var b;
         function getBuilding(building){
             if(building.checked===true){
                 console.log(building.value+" checked")
 
                 function renderBuilding(building){
                     console.log("render building");
+                    b=1;
                     let scene =document.querySelector('a-scene');
                     const latitude = 22.99910;
 					const longitude = 120.21967;
@@ -78,6 +79,16 @@
 
             else{
                 console.log(building.value+" unchecked")
+                if(b=1){
+                    let scene =document.querySelector('a-scene');
+                    let box =document.querySelector('a-box');
+                    scene.removeChild(box);
+                    b=0;
+                    console.log("remove box")
+                }
+                else{
+                    console.log("nothing happened")
+                }
             }
         }
     </script>
