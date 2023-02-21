@@ -83,7 +83,7 @@
                     box.setAttribute('depth', '41.9');
                     box.setAttribute('height', '23.2');
                     box.setAttribute('width', '72.9');
-                    box.setAttribute('material', 'transparent: false; opacity: 0.1; depthTest: true');
+                    box.setAttribute('material', 'transparent: true; opacity: 0.1; depthTest: true');
                     box.addEventListener('loaded', () => {
 							window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'));
 							console.log("render box");
