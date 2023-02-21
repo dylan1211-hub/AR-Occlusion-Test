@@ -72,6 +72,8 @@
                     console.log("render building");
                     b=1;
                     var scene =document.querySelector('a-scene');
+                    scene.setAttribute('logarithmicDepthBuffer','true');
+
                     const latitude = 22.99910;
 					const longitude = 120.21967;
                     const box = document.createElement('a-box');
