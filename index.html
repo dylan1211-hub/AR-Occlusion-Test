@@ -26,6 +26,7 @@
         id="scene"
         vr-mode-ui="enabled: false"
 		embedded
+        render-order="layer1, layer2"
         arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
         
         <a-camera gps-camera rotation-reader></a-camera>
@@ -97,6 +98,7 @@
                     sphere.setAttribute('color', '#e2dd36');
                     sphere.setAttribute('radius', '5');
                     sphere.setAttribute('animation-mixer');
+                    sphere.setAttribute('render-order','layer1');
                     sphere.addEventListener('loaded', () => {
 							window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'));
 							console.log("render sphere");
@@ -117,6 +119,7 @@
                     box.setAttribute('width', '72.9');
                     box.setAttribute('material', 'transparent: true; opacity: 0.5');
                     box.setAttribute('animation-mixer');
+                    sphere.setAttribute('render-order','layer2');
                     box.addEventListener('loaded', () => {
 							window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'));
 							console.log("render box");
