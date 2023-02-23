@@ -26,7 +26,6 @@
         id="scene"
         vr-mode-ui="enabled: false"
 		embedded
-        render-order="layer1, layer2"
         arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
         
         <a-camera gps-camera rotation-reader></a-camera>
@@ -41,7 +40,7 @@
         material="transparent: true; opacity: 0.5" animation-mixer></a-box> <!--ㄚ頭麵店longitude: 120.22761791880879; latitude: 22.99856170145283--> <!--總圖前草坪 120.21967,22.99910-->
 
         <a-sphere color="#e23232" radius="5" gps-entity-place="longitude: 120.219783; latitude: 22.99965;" 
-         animation-mixer id="s1"></a-box> <!--ㄚ頭麵店後面longitude: 120.22789847379012; latitude: 22.998810029888585--> <!--總圖 120.219783,22.99965--> 
+        material="transparent: true" animation-mixer id="s1"></a-sphere> <!--ㄚ頭麵店後面longitude: 120.22789847379012; latitude: 22.998810029888585--> <!--總圖 120.219783,22.99965--> 
 
         <!--<a-sphere color="#e2bc32" radius="2" gps-entity-place="longitude: 120.21928; latitude: 22.99896;" 
          animation-mixer render-order="layer1" id="s2"></a-box>
