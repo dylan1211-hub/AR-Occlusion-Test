@@ -14,19 +14,18 @@
 
 <body style='margin: 0; overflow: hidden;'>
 
-    <!--<div class="onoffswitch">
+    <div class="onoffswitch">
         <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" value="geomatics" tabindex="0" onchange="getBuilding(this)" >
         <label class="onoffswitch-label" for="myonoffswitch">
             <span class="onoffswitch-inner"></span>
             <span class="onoffswitch-switch"></span>
         </label>
-    </div>-->
+    </div>
 
     <a-scene
         id="scene"
         vr-mode-ui="enabled: false"
 		embedded 
-        render-order="layer1, layer2"
         arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
         
         <a-camera gps-camera rotation-reader></a-camera>
