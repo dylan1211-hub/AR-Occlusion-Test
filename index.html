@@ -14,13 +14,13 @@
 
 <body style='margin: 0; overflow: hidden;'>
 
-    <!--<div class="onoffswitch">
+    <div class="onoffswitch">
         <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" value="geomatics" tabindex="0" onchange="getBuilding(this)" >
         <label class="onoffswitch-label" for="myonoffswitch">
             <span class="onoffswitch-inner"></span>
             <span class="onoffswitch-switch"></span>
         </label>
-    </div>-->
+    </div>
 
     <a-scene
         id="scene"
@@ -44,11 +44,11 @@
         <a-box color="#4ecef9" depth="8" height="8" width="8"  gps-entity-place="longitude:120.22019; latitude: 22.99912;" 
         material="transparent: true; opacity: 0.5; depthTest: true;"  animation-mixer renderOrder="2"></a-box> ㄚ頭麵店longitude: 120.22761791880879; latitude: 22.99856170145283--> <!--總圖前草坪 120.21967,22.99910-->
 
-        <a-box color="#4ecef9" depth="4" height="4" width="4"  gps-entity-place="longitude:120.21967; latitude: 22.99910;" 
-        material="transparent: true; opacity: 0.5" animation-mixer></a-box> <!--ㄚ頭麵店longitude: 120.22788708878386; latitude: 22.998587005140383--> <!--總圖前草坪 120.21967,22.99910-->
+        <!--<a-box color="#4ecef9" depth="4" height="4" width="4"  gps-entity-place="longitude:120.21967; latitude: 22.99910;" 
+        material="transparent: true; opacity: 0.5" animation-mixer></a-box> ㄚ頭麵店longitude: 120.22788708878386; latitude: 22.998587005140383--> <!--總圖前草坪 120.21967,22.99910-->
 
         <a-sphere color="#e23232" radius="3" gps-entity-place="longitude: 120.219783; latitude: 22.99965;" 
-        material="transparent: true;" animation-mixer></a-box> <!--ㄚ頭麵店後面longitude: 120.22789847379012; latitude: 22.998810029888585--> <!--總圖 120.219783,22.99965-->
+        material="transparent: true;" animation-mixer id="s1" renderOrder="2"></a-box> <!--ㄚ頭麵店後面longitude: 120.22789847379012; latitude: 22.998810029888585--> <!--總圖 120.219783,22.99965-->
         
 
         <!--<a-sphere color="#e2bc32" radius="2" gps-entity-place="longitude: 120.21928; latitude: 22.99896;" 
@@ -67,7 +67,7 @@
          animation-mixer render-order="layer1" id="s8"></a-box>-->                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
     
 	</a-scene>
-    <!--<script>
+    <script>
         /*let building=[
             {
                 name: 'Geomatics',
@@ -104,9 +104,10 @@
                     sphere.setAttribute('id', 's1');
                     sphere.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude}`);
                     sphere.setAttribute('color', '#e2dd36');
-                    sphere.setAttribute('radius', '5');
+                    sphere.setAttribute('radius', '3');
                     sphere.setAttribute('animation-mixer');
-                    sphere.setAttribute('render-order','layer1');
+                    sphere.setAttribute('renderOrder','2');
+                    sphere.setAttribute('material', 'transparent: true; depthTest: true');
                     sphere.addEventListener('loaded', () => {
 							window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'));
 							console.log("render sphere");
@@ -125,9 +126,9 @@
                     box.setAttribute('depth', '41.9');
                     box.setAttribute('height', '23.2');
                     box.setAttribute('width', '72.9');
-                    box.setAttribute('material', 'transparent: true; opacity: 0.5');
+                    box.setAttribute('material', 'transparent: true; opacity: 0.5; depthTest: true');
                     box.setAttribute('animation-mixer');
-                    sphere.setAttribute('render-order','layer2');
+                    sphere.setAttribute('renderOrder','1');
                     box.addEventListener('loaded', () => {
 							window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'));
 							console.log("render box");
@@ -152,5 +153,5 @@
                 }
             }
         }
-    </script>-->
+    </script>
 </body>
