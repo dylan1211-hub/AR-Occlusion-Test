@@ -47,7 +47,7 @@
         <!--<a-box color="#4ecef9" depth="4" height="4" width="4"  gps-entity-place="longitude:120.21967; latitude: 22.99910;" 
         material="transparent: true; opacity: 0.5" animation-mixer></a-box> ㄚ頭麵店longitude: 120.22788708878386; latitude: 22.998587005140383--> <!--總圖前草坪 120.21967,22.99910-->
 
-        <a-sphere color="#e23232" radius="3" gps-entity-place="longitude: 120.219783; latitude: 22.99965;" 
+        <a-sphere color="#3bb922" radius="3" gps-entity-place="longitude: 120.219783; latitude: 22.99965;" 
         material="transparent: true;" animation-mixer id="s1" renderOrder="2"></a-box> <!--ㄚ頭麵店後面longitude: 120.22789847379012; latitude: 22.998810029888585--> <!--總圖 120.219783,22.99965-->
         
 
@@ -107,7 +107,7 @@
                     sphere.setAttribute('radius', '3');
                     sphere.setAttribute('animation-mixer');
                     sphere.setAttribute('renderOrder','2');
-                    sphere.setAttribute('material', 'transparent: true; depthTest: true');
+                    sphere.setAttribute('material', 'transparent: true; opacity: 0.5; depthTest: true');
                     sphere.addEventListener('loaded', () => {
 							window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'));
 							console.log("render sphere");
@@ -116,7 +116,6 @@
 
                     console.log("render building");
                     b=1;
-
                     const latitude1 = 22.99910;
 					const longitude1 = 120.21967;
                     const box = document.createElement('a-box');
@@ -126,7 +125,7 @@
                     box.setAttribute('depth', '41.9');
                     box.setAttribute('height', '23.2');
                     box.setAttribute('width', '72.9');
-                    box.setAttribute('material', 'transparent: true; opacity: 0.5; depthTest: true');
+                    box.setAttribute('material', 'transparent: true;  depthTest: true');
                     box.setAttribute('animation-mixer');
                     sphere.setAttribute('renderOrder','1');
                     box.addEventListener('loaded', () => {
