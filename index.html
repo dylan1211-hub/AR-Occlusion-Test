@@ -109,7 +109,7 @@
                     //sphere.setAttribute('radius', '3');
                     sphere.setAttribute('animation-mixer');
                     sphere.setAttribute('render-order','1');
-                    sphere.setAttribute('material', 'transparent: true; color:#e2dd36;  depthTest: true;');
+                    sphere.setAttribute('material', 'transparent: true; color:#e2dd36; opacity: 0.98;  depthTest: true;');
                     sphere.addEventListener('loaded', () => {
 							window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'));
 							console.log("render sphere");
@@ -128,7 +128,7 @@
                     //box.setAttribute('depth', '8');
                     //box.setAttribute('height', '8');
                     //box.setAttribute('width', '8');
-                    box.setAttribute('material', 'transparent: true; color:white; opacity: 0.9;  depthTest: true;');
+                    box.setAttribute('material', 'transparent: true; color:white; opacity: 0.99;  depthTest: true;');
                     box.setAttribute('animation-mixer');
                     box.setAttribute('render-order','2');
                     box.addEventListener('loaded', () => {
