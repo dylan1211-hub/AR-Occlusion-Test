@@ -101,7 +101,7 @@
                     const latitude = 22.998810029888585;
 					const longitude =120.22789847379012;
                     const sphere = document.createElement('a-entity');
-                    sphere.setAttribute('geometry','primitive: sphere')
+                    sphere.setAttribute('geometry','primitive: sphere ; radius:5 ')
                     sphere.setAttribute('id', 's1');
                     sphere.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude}`);
                     sphere.setAttribute('color', '#e2dd36');
@@ -127,6 +127,7 @@
                     box.setAttribute('depth', '8');
                     box.setAttribute('height', '8');
                     box.setAttribute('width', '8');
+                    box.setAttribute('size', '8 8 8');
                     box.setAttribute('material', 'transparent: true; opacity: 0.1;  depthTest: true');
                     box.setAttribute('animation-mixer');
                     sphere.setAttribute('renderOrder','1');
