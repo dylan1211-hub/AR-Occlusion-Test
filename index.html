@@ -104,11 +104,11 @@
                     sphere.setAttribute('geometry','primitive: sphere ; radius:5 ')
                     sphere.setAttribute('id', 's1');
                     sphere.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude}`);
-                    sphere.setAttribute('color', '#e2dd36');
-                    sphere.setAttribute('radius', '3');
+                    //sphere.setAttribute('color', '#e2dd36');
+                    //sphere.setAttribute('radius', '3');
                     sphere.setAttribute('animation-mixer');
                     sphere.setAttribute('renderOrder','2');
-                    sphere.setAttribute('material', 'transparent: true;  depthTest: true');
+                    sphere.setAttribute('material', 'transparent: true; color:#e2dd36;  depthTest: true');
                     sphere.addEventListener('loaded', () => {
 							window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'));
 							console.log("render sphere");
@@ -120,15 +120,14 @@
                     const latitude1 =22.998587005140383;
 					const longitude1 = 120.22788708878386;
                     const box = document.createElement('a-entity');
-                    box.setAttribute('geometry','primitive: box')
+                    box.setAttribute('geometry','primitive: box; depth:8; height:8; width:8')
                     box.setAttribute('id', 'new-box');
                     box.setAttribute('gps-entity-place', `latitude: ${latitude1}; longitude: ${longitude1}`);
-                    box.setAttribute('color', '#4ecef9');
-                    box.setAttribute('depth', '8');
-                    box.setAttribute('height', '8');
-                    box.setAttribute('width', '8');
-                    box.setAttribute('size', '8 8 8');
-                    box.setAttribute('material', 'transparent: true; opacity: 0.1;  depthTest: true');
+                    //box.setAttribute('color', '#4ecef9');
+                    //box.setAttribute('depth', '8');
+                    //box.setAttribute('height', '8');
+                    //box.setAttribute('width', '8');
+                    box.setAttribute('material', 'transparent: true; color:#4ecef9; opacity: 0.1;  depthTest: true');
                     box.setAttribute('animation-mixer');
                     sphere.setAttribute('renderOrder','1');
                     box.addEventListener('loaded', () => {
